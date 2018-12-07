@@ -18,6 +18,7 @@ public class Word{
         {if(((word.substring(i,i+1)).equals("A"))&&(!(word.substring(i+1,i+2)).equals("A")))
             {word=word.substring(0,i)+word.substring(i+1,i+2)+word.substring(i,i+1)+word.substring(i+2);}
         }
+        return word;
         
     }
     /** Modifies wordList by replacing each word with its scrambled
