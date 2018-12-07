@@ -46,11 +46,10 @@ public class Word{
         int l=0;
         while(l!=wordList.size())
         {if(scrambleWord(wordList.get(l)).equals(wordList.get(l)))
-           {wordList.remove(l);
-           l++;}
+           {wordList.remove(l);}
              else
-             {wordList.set(l, scrambleWord(wordList.get(l)));
-               l++;}
+             {wordList.set(l, scrambleWord(wordList.get(l)));}
+         l++;
            }
     }
 
