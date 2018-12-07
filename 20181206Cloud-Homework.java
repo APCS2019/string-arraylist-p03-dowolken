@@ -34,14 +34,22 @@ public class Word{
      */
     public static void scrambleOrRemove(List<String> wordList){
         /* part (b) */
-        ArrayList<String> arr = new ArrayList<String>(wordList.size());
+        
         for(int i=0;i<wordList.size();i++)
-           {arr.add(wordList.get(i));
-            if(scrambleWord(wordList.get(i)).equals(arr.get(i))
+        {if(scrambleWord(wordList.get(i)).equals(wordList.get(i)))
               {wordList.remove(i);
               i--;}
                else
                {wordList.set(i, scrambleWord(wordList.get(i)));}
+           }
+        //another way//
+        while(l!=wordList.size())
+        {if(scrambleWord(wordList.get(l)).equals(wordList.get(l)))
+           {wordList.remove(l);
+           l++;}
+             else
+             {wordList.set(l, scrambleWord(wordList.get(l)));
+               l++;}
            }
     }
 
