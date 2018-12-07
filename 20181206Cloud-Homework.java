@@ -39,6 +39,8 @@ public class Word{
            {arr.add(wordList.get(i));
             if(scrambleWord(wordList.get(i)).equals(arr.get(i))
               {wordList.remove(i);}
+               else
+               {wordList.set(i, scrambleWord(wordList.get(i)));}
            }
     }
 
