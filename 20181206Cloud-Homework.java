@@ -19,6 +19,7 @@ public class Word{
             {word=word.substring(0,i)+word.substring(i+1,i+2)+word.substring(i,i+1)+word.substring(i+2);
              i++;}
         }
+        return word;
         
     }
     /** Modifies wordList by replacing each word with its scrambled
@@ -33,12 +34,20 @@ public class Word{
      */
     public static void scrambleOrRemove(List<String> wordList){
         /* part (b) */
-        ArrayList<String> arr = new ArrayList<String>(wordList.size());
         for(int i=0;i<wordList.size();i++)
-           {arr.add(wordList.get(i));
-            if(scrambleWord(wordList.get(i)).equals(arr.get(i)))
-              {wordList.remove(i);}
+           {if(scrambleWord(wordList.get(i)).equals(wordList.get(i)))
+              {wordList.remove(i);
+              i--;}
+            else
+               {wordList.set(l, scrambleWord(wordList.get(l)));
            }
+         /*another*/
+            while(l!=wordList.size())
+                {if(scrambleWord(wordList.get(l)).equals(wordList.get(l)))
+                   {wordList.remove(l);}
+                   else
+                   {wordList.set(l, scrambleWord(wordList.get(l)));}
+                l++;}
     }
 
     public static void main(String[] args)
