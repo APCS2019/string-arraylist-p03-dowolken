@@ -16,7 +16,8 @@ public class Word{
         /* part (a) */
         for(int i=0;i<word.length()-1; i++)
         {if(((word.substring(i,i+1)).equals("A"))&&(!(word.substring(i+1,i+2)).equals("A")))
-            {word=word.substring(0,i)+word.substring(i+1,i+2)+word.substring(i,i+1)+word.substring(i+2);}
+            {word=word.substring(0,i)+word.substring(i+1,i+2)+word.substring(i,i+1)+word.substring(i+2);
+            i++}
         }
         return word;
         
@@ -35,8 +36,8 @@ public class Word{
         /* part (b) */
         ArrayList<String> arr = new ArrayList<String>(wordList.size());
         for(int i=0;i<wordList.size();i++)
-           {arr[i]=wordList[i];
-            if(scrambleWord(wordList[i]).equals(arr[i]))
+           {arr.add(wordList.get(i));
+            if(scrambleWord(wordList.get(i)).equals(arr.get(i))
               {wordList.remove(i);}
            }
     }
